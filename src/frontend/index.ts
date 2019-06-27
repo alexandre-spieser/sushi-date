@@ -12,8 +12,7 @@ export default async (_: NowRequest, res: NowResponse) => {
 
   res.setHeader("Content-Type", "text/html");
   res.status(200).send(
-    layout(`<h1>Sushi Date <3 (TypeScript + Go)</h1>
-  <div class="sushi-machine">
+    layout(`<div class="sushi-machine">
       <div class="neta"></div>
       <div class="rice"></div>
       <div class="sushi"></div>
