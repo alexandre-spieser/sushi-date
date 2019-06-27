@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    { 
+	  "src": "./src/**/*.go", 
+	  "use": "@now/go" 
+	},
+    {
+      "src": "./src/**/*.ts",
+      "use": "@now/node"
+    },
+    {
+      "src": "./public/*",
+      "use": "@now/static"
+    }
+  ],
+  "env": {
+    "IS_NOW": "true"
+  },
+  "routes": [
+    { "src": "/go-api/(.*)", "dest": "/src/go-api/$1" },
+    { "src": "/api/(.*)", "dest": "/src/backend/$1" },
+    { "src": "/sushi/(.*)", "dest": "/src/frontend/sushi?type=$1" },
+    { "src": "/public/(.*)", "dest": "/public/$1" },
+    { "src": "/(.*)", "dest": "/src/frontend/$1" }
+  ]
+}
